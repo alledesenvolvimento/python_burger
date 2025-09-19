@@ -3,19 +3,18 @@ from django.http import HttpResponse
 
 # View da página inicial do Python Burger
 def home(request):
-    # João passa informações importantes para o salão
     contexto = {
         'atendente': 'João',
         'restaurante': 'Python Burger',
         'especialidade': 'programação',
         'aberto': True,
-        
-        # Lista dos hambúrguers do dia
         'destaques': [
             'Python Classic',
             'Django Master',
             'Flask Minimal',
-        ]
+        ],
+        # Nova variável que pode estar vazia
+        'promocao_hoje': '',  # String vazia para testar
     }
     
     return render(request, 'cardapio/home.html', contexto)
