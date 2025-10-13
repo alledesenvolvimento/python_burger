@@ -4,81 +4,27 @@
 
 /* ===== VARIÁVEIS PARA MODO CLARO/ESCURO ===== */
 :root {
-    /* MODO CLARO (padrão) */
-    --bg-primary: #ffffff;
-    /* Fundo principal branco */
-    --bg-secondary: #f8f9fa;
-    /* Fundo secundário claro */
-    --bg-card: #ffffff;
-    /* Fundo dos cards branco */
-    --text-primary: #2c3e50;
-    /* Texto principal escuro */
-    --text-secondary: #495057;
-    /* Texto secundário cinza escuro */
-    --text-muted: #6c757d;
-    /* Texto esmaecido */
-    --border-color: rgba(0, 0, 0, 0.1);
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --bg-section-alt: #F8F9FA;
-    --bg-card-elevated: #FFFFFF;
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
-    --footer-bg: #F1F3F5;
-    --social-icon-bg: #747a83;
-}
-
-/* MODO ESCURO */
-[data-theme="dark"] {
-    --bg-primary: #000000;
-    /* Fundo principal preto */
-    --bg-secondary: #1a1a1a;
-    /* Fundo secundário escuro */
-    --bg-card: #333333;
-    /* Fundo dos cards */
-    --text-primary: #ffffff;
-    /* Texto principal branco */
-    --text-secondary: #cccccc;
-    /* Texto secundário cinza claro */
-    --text-muted: #6c757d;
-    /* Texto esmaecido */
+    /* MODO ESCURO (atual/padrão) */
+    --bg-primary: #000000;          /* Fundo principal preto */
+    --bg-secondary: #1a1a1a;        /* Fundo secundário escuro */
+    --bg-card: #333333;             /* Fundo dos cards */
+    --text-primary: #ffffff;        /* Texto principal branco */
+    --text-secondary: #cccccc;      /* Texto secundário cinza claro */
+    --text-muted: #6c757d;          /* Texto esmaecido */
     --border-color: rgba(255, 255, 255, 0.1);
     --shadow-color: rgba(0, 0, 0, 0.2);
-    --bg-section-alt: #000000;
-    --bg-card-elevated: #404040;
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
-    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.25);
-    --footer-bg: #1a1a1a;
-    --social-icon-bg: #333333;
 }
 
-/* Ajustes específicos para cards no modo claro */
-[data-theme="light"] .food-card {
-    background: linear-gradient(135deg, #FFE5B4 0%, #FFD6A5 100%) !important;
-}
-
-[data-theme="light"] .snack-card {
-    background: linear-gradient(135deg, #FFE0B3 0%, #FFCF96 100%) !important;
-}
-
-[data-theme="light"] .beverage-card {
-    background: linear-gradient(135deg, #FFD4B8 0%, #FFBF9F 100%) !important;
-}
-
-[data-theme="light"] .category-card h3 {
-    color: #2c3e50 !important;
-}
-
-[data-theme="light"] .card-middle p {
-    color: #495057 !important;
-}
-
-[data-theme="light"] .category-btn {
-    background-color: #FF8C00 !important;
-    color: #ffffff !important;
-}
-
-[data-theme="light"] .category-btn:hover {
-    background-color: #FFB347 !important;
+/* MODO CLARO */
+[data-theme="light"] {
+    --bg-primary: #ffffff;          /* Fundo principal branco */
+    --bg-secondary: #f8f9fa;        /* Fundo secundário claro */
+    --bg-card: #ffffff;             /* Fundo dos cards branco */
+    --text-primary: #2c3e50;        /* Texto principal escuro */
+    --text-secondary: #495057;      /* Texto secundário cinza escuro */
+    --text-muted: #6c757d;          /* Texto esmaecido */
+    --border-color: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Reset e base */
@@ -92,7 +38,7 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: #2c3e50;
-    background: var(--bg-primary);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
     min-height: 100vh;
 }
 
@@ -104,7 +50,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: var(--shadow-sm);
+    box-shadow: none;
 }
 
 .header-container {
@@ -128,8 +74,7 @@ body {
 
 .logo::before,
 .logo::after {
-    display: none;
-    /* Remove os caracteres < e /> */
+    display: none; /* Remove os caracteres < e /> */
 }
 
 /* Navegação estilo BURGRY */
@@ -157,22 +102,22 @@ body {
 
 .nav-link:hover {
     background: transparent;
-    color: #FFA500;
-    border-bottom: 2px solid #FFA500;
+    color: #ffd43b;
+    border-bottom: 2px solid #ffd43b;
     transform: none;
 }
 
 .nav-link.active {
     background: transparent;
-    color: #FFA500;
+    color: #ffd43b;
     font-weight: 600;
     box-shadow: none;
-    border-bottom: 2px solid #FFA500;
+    border-bottom: 2px solid #ffd43b;
 }
 
 /* Botão Shop Online estilo BURGRY */
 .shop-btn {
-    background: #FFA500;
+    background: #ffd43b;
     color: var(--bg-primary);
     text-decoration: none;
     padding: 0.75rem 1.5rem;
@@ -206,7 +151,7 @@ body {
 
 .theme-toggle:hover {
     background: rgba(255, 212, 59, 0.2);
-    border-color: #FFA500;
+    border-color: #ffd43b;
     transform: rotate(15deg) scale(1.1);
 }
 
@@ -262,7 +207,7 @@ body {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #3776ab 0%, #FFA500 100%);
+    background: linear-gradient(135deg, #3776ab 0%, #ffd43b 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -286,13 +231,13 @@ body {
 
 .hero-code code {
     font-family: 'Fira Code', monospace;
-    color: #FFA500;
+    color: #ffd43b;
     font-size: 1.1rem;
 }
 
 .tech-badge {
     display: inline-block;
-    background: linear-gradient(45deg, #3776ab, #FFA500);
+    background: linear-gradient(45deg, #3776ab, #ffd43b);
     color: #2c3e50;
     padding: 0.5rem 1rem;
     border-radius: 25px;
@@ -371,7 +316,7 @@ body {
 }
 
 .footer-section ul li a:hover {
-    color: #FFA500;
+    color: #ffd43b;
 }
 
 .footer-section p {
@@ -385,7 +330,7 @@ body {
 }
 
 .footer-label {
-    color: #FFA500 !important;
+    color: #ffd43b !important;
     font-weight: 600;
     margin-top: 1rem !important;
     margin-bottom: 0.5rem !important;
@@ -400,8 +345,8 @@ body {
 }
 
 .social-link {
-    background: var(--social-icon-bg);
-    color: #ffffff;
+    background: var(--bg-card);
+    color: var(--text-primary);
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -414,7 +359,7 @@ body {
 }
 
 .social-link:hover {
-    background: #FFA500;
+    background: #ffd43b;
     color: var(--bg-primary);
 }
 
@@ -499,7 +444,7 @@ body {
 
 .nav.mobile-open .nav-link:hover {
     background: var(--bg-card);
-    color: #FFA500;
+    color: #ffd43b;
     border-bottom: none;
 }
 
@@ -515,7 +460,6 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -526,70 +470,9 @@ body {
     animation: fadeInUp 0.6s ease forwards;
 }
 
-.footer-section:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.footer-section:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.footer-section:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-/* ===== BOTÃO FLUTUANTE WHATSAPP ===== */
-.whatsapp-floating {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-    z-index: 9999;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.whatsapp-floating:hover {
-    transform: scale(1.1) translateY(-5px);
-    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.6);
-}
-
-.whatsapp-floating:active {
-    transform: scale(0.95);
-}
-
-.whatsapp-icon {
-    width: 35px;
-    height: 35px;
-    color: #ffffff;
-    transition: all 0.3s ease;
-}
-
-.whatsapp-floating:hover .whatsapp-icon {
-    transform: rotate(15deg);
-}
-
-/* Animação de pulso */
-@keyframes pulse-whatsapp {
-    0%, 100% {
-        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-    }
-    50% {
-        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.7);
-    }
-}
-
-.whatsapp-floating {
-    animation: pulse-whatsapp 2s infinite;
-}
+.footer-section:nth-child(1) { animation-delay: 0.1s; }
+.footer-section:nth-child(2) { animation-delay: 0.2s; }
+.footer-section:nth-child(3) { animation-delay: 0.3s; }
 
 /* Responsividade */
 @media (max-width: 768px) {
@@ -597,26 +480,26 @@ body {
         position: relative;
         padding: 0 1rem;
     }
-
+    
     .hamburger {
         display: flex;
     }
-
+    
     .nav {
         display: none;
         position: absolute;
         top: 100%;
         right: 0;
     }
-
+    
     .logo {
         font-size: 1.5rem;
     }
-
+    
     .content {
         padding: 2rem 1rem;
     }
-
+    
     .default-content h2 {
         font-size: 2.5rem;
     }
@@ -631,7 +514,7 @@ body {
         gap: 2rem;
         padding: 0 1rem;
     }
-
+    
     .footer-sections {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -641,26 +524,13 @@ body {
         right: 1rem;
         min-width: 180px;
     }
-
-    /* WhatsApp - Tablet */
-    .whatsapp-floating {
-        width: 55px;
-        height: 55px;
-        bottom: 20px;
-        right: 20px;
-    }
-    
-    .whatsapp-icon {
-        width: 30px;
-        height: 30px;
-    }
 }
 
 @media (max-width: 480px) {
     .default-content h2 {
         font-size: 2rem;
     }
-
+    
     .logo {
         font-size: 1.3rem;
     }
@@ -668,7 +538,7 @@ body {
     .header-container {
         padding: 0 0.5rem;
     }
-
+    
     .nav.mobile-open {
         right: 0.5rem;
         min-width: 160px;
@@ -677,18 +547,5 @@ body {
     .footer-bottom {
         padding-left: 1rem;
         padding-right: 1rem;
-    }
-
-    /* WhatsApp - Mobile */
-    .whatsapp-floating {
-        width: 50px;
-        height: 50px;
-        bottom: 15px;
-        right: 15px;
-    }
-    
-    .whatsapp-icon {
-        width: 28px;
-        height: 28px;
     }
 }
